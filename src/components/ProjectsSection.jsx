@@ -23,6 +23,7 @@ export default function ProjectsSection() {
 
   // Intercept vertical wheel events to scroll horizontally first
   const handleWheel = (e) => {
+    if (window.innerWidth < 1024) return; // Disable horizontal capturing on mobile
     if (!scrollRef.current) return;
     const isScrollingDown = e.deltaY > 0;
     const isScrollingUp = e.deltaY < 0;
@@ -42,7 +43,7 @@ export default function ProjectsSection() {
 
   return (
     <section 
-      className="scroll-section p-0 m-0" 
+      className="scroll-section p-0 m-0 !overflow-y-auto lg:!overflow-hidden" 
       id="projects" 
       style={{ position: 'relative' }}
       onWheel={handleWheel}
@@ -51,11 +52,11 @@ export default function ProjectsSection() {
       <img src="./assets/dvlpr_bubble.png" alt="Floating Glass Bubble" className="absolute top-[15%] left-[5%] w-[400px] h-auto object-contain pointer-events-none animate-[float_8s_ease-in-out_infinite] mix-blend-multiply opacity-80 z-0" style={{ WebkitMaskImage: 'radial-gradient(ellipse at center, black 50%, transparent 70%)', maskImage: 'radial-gradient(ellipse at center, black 50%, transparent 70%)' }} />
       <img src="./assets/dvlpr_bubble.png" alt="Floating Glass Bubble" className="absolute top-[30%] right-[10%] w-[350px] h-auto object-contain pointer-events-none animate-[float_7s_ease-in-out_infinite_reverse] mix-blend-multiply opacity-70 z-0" style={{ WebkitMaskImage: 'radial-gradient(ellipse at center, black 50%, transparent 70%)', maskImage: 'radial-gradient(ellipse at center, black 50%, transparent 70%)' }} />
 
-      {/* Horizontal Scroll Container */}
+      {/* Horizontal Scroll Container (Vertical on Mobile) */}
       <div 
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex w-full h-full overflow-x-auto snap-x snap-mandatory"
+        className="flex flex-col lg:flex-row w-full h-full lg:overflow-x-auto lg:snap-x lg:snap-mandatory"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         <style>{`
@@ -65,7 +66,7 @@ export default function ProjectsSection() {
         `}</style>
         
         {/* Slide 1: Intro */}
-        <div className="min-w-[100vw] h-full snap-start flex items-center justify-center relative flex-shrink-0">
+        <div className="w-full lg:min-w-[100vw] min-h-[100vh] lg:h-full lg:snap-start flex items-center justify-center relative flex-shrink-0 py-20 lg:py-0">
           <div className="main-container text-center relative z-10 w-full px-4 md:px-0">
             <h2 className="heading-xl mb-6 tracking-tight">
               Portfolio & Previous<br />Projects
@@ -82,7 +83,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* Slide 2: Crown Clothing */}
-        <div className="min-w-[100vw] h-full snap-start flex items-center justify-center relative flex-shrink-0 pt-20">
+        <div className="w-full lg:min-w-[100vw] min-h-[100vh] lg:h-full lg:snap-start flex items-center justify-center relative flex-shrink-0 py-20 lg:py-0 lg:pt-20">
           <div className="main-container grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-24">
             
             {/* Left side text */}
@@ -122,7 +123,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* Slide 3: Fit & Healthy */}
-        <div className="min-w-[100vw] h-full snap-start flex items-center justify-center relative flex-shrink-0 pt-20">
+        <div className="w-full lg:min-w-[100vw] min-h-[100vh] lg:h-full lg:snap-start flex items-center justify-center relative flex-shrink-0 py-20 lg:py-0 lg:pt-20 border-b lg:border-none border-zinc-200/20">
           <div className="main-container grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-24">
             
             {/* Left side image */}
@@ -163,8 +164,8 @@ export default function ProjectsSection() {
 
       </div>
 
-      {/* Horizontal Nav Dots (Middle Bottom) */}
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-4 z-50">
+      {/* Horizontal Nav Dots (Middle Bottom) - Hidden on Mobile */}
+      <div className="hidden lg:flex absolute bottom-20 left-1/2 -translate-x-1/2 gap-4 z-50">
         {[0, 1, 2].map(idx => (
           <button
             key={idx}
