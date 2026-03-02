@@ -1,0 +1,253 @@
+@import "tailwindcss";
+
+:root {
+  --bg-dark: #e6e2d8;
+  --text-primary: #1a1a1a;
+  --text-secondary: #222222;
+  --accent-purple: #c026d3;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: "Inter", sans-serif;
+  overflow: hidden; /* Hide body scroll, force internal container scroll */
+}
+
+/* 
+  Dot Pattern Background. 
+  The original dvlpr.pro has subtle, distant dots.
+*/
+.dot-pattern {
+  /* Background styling combining the color and paper texture */
+  background-color: var(--bg-dark);
+  background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Fixed Layout Containers */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+  pointer-events: none; /* Let clicks pass through except on children */
+}
+.fixed-header > * {
+  pointer-events: auto;
+}
+
+.fixed-side-nav {
+  position: fixed;
+  right: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 50;
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 2rem;
+  left: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: calc(100% - 8rem);
+  z-index: 50;
+  pointer-events: none;
+}
+
+.fixed-bottom > * {
+  pointer-events: auto;
+}
+
+/* Scroll Container for Snap Scrolling */
+.scroll-container {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll-section {
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+/* Typography styles */
+h1, h2, h3, .heading-xl {
+  font-family: 'Rye', cursive;
+}
+
+.heading-xl {
+  font-size: 4.5rem;
+  line-height: 1.1;
+  font-weight: normal; /* Rye only supports 400 weight */
+}
+
+.text-body {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.text-accent {
+  color: var(--accent-purple);
+}
+
+.btn-outline {
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #000;
+  transition: all 0.3s ease;
+  background: transparent;
+  cursor: pointer;
+}
+.btn-outline:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* Link with Arrow */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  color: var(--accent-purple);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.3s;
+}
+.link-arrow:hover {
+  opacity: 0.8;
+}
+.link-arrow svg {
+  margin-left: 0.5rem;
+  transition: transform 0.3s;
+}
+.link-arrow:hover svg {
+  transform: translateX(4px);
+}
+
+/* Bubbly Glassmorphism Button - Clear Glass Orb Style */
+.btn-bubbly {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2.25rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  /* Clear glass base with realistic refractions mimicking a sphere */
+  background: 
+    /* Top-left intense highlight */
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.1) 20%, transparent 40%),
+    /* Bottom curved reflection for volume */
+    radial-gradient(ellipse at 50% 90%, rgba(255, 255, 255, 0.6) 0%, transparent 50%),
+    /* Internal refraction arcs */
+    radial-gradient(ellipse at 80% 30%, rgba(255, 255, 255, 0.4) 0%, transparent 40%),
+    /* Base frosted glass layer */
+    rgba(255, 255, 255, 0.3);
+  /* Inner and outer shadows to create a hollow glass ball volume */
+  box-shadow: 
+    inset 4px 4px 10px rgba(255, 255, 255, 0.95),    /* Top-left volume rim */
+    inset -4px -4px 15px rgba(0, 0, 0, 0.15),        /* Bottom-right shadow curve */
+    0 10px 20px -5px rgba(0, 0, 0, 0.15),            /* Soft drop shadow */
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add a subtle internal rainbow/prism refraction flare (crucial for the orb look) */
+.btn-bubbly::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 60%;
+  width: 30%;
+  height: 20%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255,0,0,0.15), rgba(0,255,0,0.15), rgba(0,0,255,0.15));
+  filter: blur(4px);
+  transform: rotate(45deg);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.btn-bubbly:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 
+    inset 6px 6px 15px rgba(255, 255, 255, 1),
+    inset -4px -4px 20px rgba(0, 0, 0, 0.2),
+    0 15px 30px -5px rgba(0, 0, 0, 0.2),
+    0 8px 10px -2px rgba(0, 0, 0, 0.1);
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.2) 25%, transparent 45%),
+    radial-gradient(ellipse at 50% 90%, rgba(255, 255, 255, 0.7) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 30%, rgba(255, 255, 255, 0.5) 0%, transparent 40%),
+    rgba(255, 255, 255, 0.35);
+}
+
+.btn-bubbly:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 
+    inset 4px 4px 10px rgba(255, 255, 255, 0.85),
+    inset -2px -2px 10px rgba(0, 0, 0, 0.1),
+    0 5px 10px -3px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.btn-bubbly svg {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  color: var(--text-primary);
+}
+.btn-bubbly:hover svg {
+  transform: translateX(4px) scale(1.15);
+}
