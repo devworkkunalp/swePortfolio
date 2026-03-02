@@ -6,8 +6,8 @@ export default function ContactSection() {
       <div className="main-container grid grid-cols-1 md:grid-cols-2 items-center gap-12 relative h-full">
         
         {/* Left Side 3D Globe */}
-        <div className="w-full h-full flex items-center justify-center relative opacity-20 md:opacity-100 pointer-events-none">
-          <div className="w-full md:w-[120%] max-w-[500px] md:max-w-[800px] absolute right-0 lg:right-[0%] top-1/2 -translate-y-1/2 md:translate-y-0 md:top-auto">
+        <div className="w-full h-full flex items-center justify-center relative opacity-20 md:opacity-100 pointer-events-none -translate-y-12 md:translate-y-0 -z-10">
+          <div className="w-full md:w-[120%] max-w-[500px] md:max-w-[800px] absolute right-0 lg:right-[0%] top-1/2 -translate-y-1/2 md:translate-y-0 md:top-auto mix-blend-darken">
             <img 
               src="./assets/dvlpr_globe_light.png" 
               alt="3D Earth Globe" 

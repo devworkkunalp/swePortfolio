@@ -101,15 +101,19 @@ body {
   display: flex;
   align-items: center;
   position: relative;
-  overflow: hidden;
-  padding: 7rem 0 5rem 0; /* Add padding on mobile to clear fixed header/footer */
+  /* Reduced padding to preserve space on small phones */
+  padding: 6rem 0 4rem 0; 
+  /* Allow natural scrolling if content is taller than viewport */
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .main-container {
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  /* Slightly more horizontal padding on mobile to pull text away from edges */
+  padding: 0 2rem;
 }
 
 /* Responsive Overrides */
