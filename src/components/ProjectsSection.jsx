@@ -48,8 +48,8 @@ export default function ProjectsSection() {
       onWheel={handleWheel}
     >
       {/* Background Floating Spheres/Planets applied to the main container so they persist */}
-      <img src="/assets/dvlpr_bubble.png" alt="Floating Glass Bubble" className="absolute top-[15%] left-[5%] w-[400px] h-auto object-contain pointer-events-none animate-[float_8s_ease-in-out_infinite] mix-blend-multiply opacity-80 z-0" style={{ WebkitMaskImage: 'radial-gradient(ellipse at center, black 50%, transparent 70%)', maskImage: 'radial-gradient(ellipse at center, black 50%, transparent 70%)' }} />
-      <img src="/assets/dvlpr_bubble.png" alt="Floating Glass Bubble" className="absolute top-[30%] right-[10%] w-[350px] h-auto object-contain pointer-events-none animate-[float_7s_ease-in-out_infinite_reverse] mix-blend-multiply opacity-70 z-0" style={{ WebkitMaskImage: 'radial-gradient(ellipse at center, black 50%, transparent 70%)', maskImage: 'radial-gradient(ellipse at center, black 50%, transparent 70%)' }} />
+      <img src="./assets/dvlpr_bubble.png" alt="Floating Glass Bubble" className="absolute top-[15%] left-[5%] w-[400px] h-auto object-contain pointer-events-none animate-[float_8s_ease-in-out_infinite] mix-blend-multiply opacity-80 z-0" style={{ WebkitMaskImage: 'radial-gradient(ellipse at center, black 50%, transparent 70%)', maskImage: 'radial-gradient(ellipse at center, black 50%, transparent 70%)' }} />
+      <img src="./assets/dvlpr_bubble.png" alt="Floating Glass Bubble" className="absolute top-[30%] right-[10%] w-[350px] h-auto object-contain pointer-events-none animate-[float_7s_ease-in-out_infinite_reverse] mix-blend-multiply opacity-70 z-0" style={{ WebkitMaskImage: 'radial-gradient(ellipse at center, black 50%, transparent 70%)', maskImage: 'radial-gradient(ellipse at center, black 50%, transparent 70%)' }} />
 
       {/* Horizontal Scroll Container */}
       <div 
@@ -111,7 +111,7 @@ export default function ProjectsSection() {
             {/* Right side image */}
             <div className="relative w-full aspect-video flex items-center justify-center order-1 lg:order-2">
               <img 
-                src="/assets/dvlpr_crown_iso.png" 
+                src="./assets/dvlpr_crown_iso.png" 
                 alt="Crown Clothing Laptop Mockup" 
                 className="w-[120%] max-w-[800px] h-auto object-contain drop-shadow-2xl animate-[float_5s_ease-in-out_infinite] mix-blend-multiply"
                 style={{ WebkitMaskImage: 'radial-gradient(ellipse at center, black 55%, transparent 75%)', maskImage: 'radial-gradient(ellipse at center, black 55%, transparent 75%)' }}
@@ -128,7 +128,7 @@ export default function ProjectsSection() {
             {/* Left side image */}
             <div className="relative w-full aspect-[3/4] flex items-center justify-center lg:justify-end">
               <img 
-                src="/assets/dvlpr_fit_iso.png" 
+                src="./assets/dvlpr_fit_iso.png" 
                 alt="Fit & Healthy Mobile Mockup" 
                 className="w-[90%] max-w-[500px] h-auto object-contain drop-shadow-2xl animate-[float_6s_ease-in-out_infinite_reverse] mix-blend-multiply filter contrast-125"
                 style={{ WebkitMaskImage: 'radial-gradient(ellipse at center, black 55%, transparent 75%)', maskImage: 'radial-gradient(ellipse at center, black 55%, transparent 75%)' }}

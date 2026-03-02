@@ -9,7 +9,7 @@ export default function ContactSection() {
         <div className="w-full h-full flex items-center justify-center relative">
           <div className="w-[120%] max-w-[800px] absolute right-[-5%] lg:right-[0%]">
             <img 
-              src="/assets/dvlpr_globe_light.png" 
+              src="./assets/dvlpr_globe_light.png" 
               alt="3D Earth Globe" 
               className="w-full h-auto object-contain animate-[spin_100s_linear_infinite] mix-blend-darken filter contrast-125"
             />

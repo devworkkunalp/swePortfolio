@@ -14,7 +14,7 @@ export default function Header() {
       {/* Top Right Buttons */}
       <div className="flex items-center gap-4">
         <a 
-          href="/Dev-KunalPatil-4years.pdf" 
+          href="./Dev-KunalPatil-4years.pdf" 
           download="Kunal_Patil_Resume.pdf"
           className="btn-bubbly !px-6 !py-2 !text-sm"
         >

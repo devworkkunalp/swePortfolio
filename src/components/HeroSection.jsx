@@ -23,7 +23,7 @@ export default function HeroSection() {
           {/* The 3D Monitor Render */}
           <div className="absolute right-[-10%] top-1/2 -translate-y-1/2 w-[120%] max-w-[800px] object-cover pointer-events-none z-0">
             <img
-              src="/assets/dvlpr_hero_iso.png"
+              src="./assets/dvlpr_hero_iso.png"
               alt="High Quality 3D Isometric Developer Desk"
               className="w-full h-auto drop-shadow-2xl animate-[float_6s_ease-in-out_infinite] mix-blend-multiply"
               style={{
@@ -38,7 +38,7 @@ export default function HeroSection() {
           {/* Small floating purple diamond from original design */}
           <div className="absolute bottom-10 left-20 w-16 h-16 animate-[float_4s_ease-in-out_infinite_reverse]">
             <img
-              src="/assets/dvlpr_purple_diamond_1772298452728.png"
+              src="./assets/dvlpr_purple_diamond_1772298452728.png"
               alt="floating diamond"
               className="w-full h-full object-contain blur-[1px] opacity-80 mix-blend-multiply grayscale"
             />
