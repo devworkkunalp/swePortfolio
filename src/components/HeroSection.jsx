@@ -5,7 +5,7 @@ export default function HeroSection() {
     <section className="scroll-section">
       <div className="main-container grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
         {/* Left Content */}
-        <div className="z-10 animate-fade-in-up">
+        <div className="z-10 animate-fade-in-up text-center lg:text-left flex flex-col items-center lg:items-start">
           <h1 className="heading-xl mb-6">Senior Software Engineer</h1>
           <p className="text-body max-w-lg mb-8">
             Building scalable, reliable, and secure back-end services and

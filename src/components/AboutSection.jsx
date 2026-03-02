@@ -9,7 +9,7 @@ export default function AboutSection() {
         </div>
 
         {/* Left Header */}
-        <div className="z-10 animate-fade-in-up">
+        <div className="z-10 animate-fade-in-up text-center md:text-left">
           <h2 className="heading-xl mb-4">
             Hi, I'm Kunal<br />Software Engineer
           </h2>
@@ -19,7 +19,7 @@ export default function AboutSection() {
         </div>
 
         {/* Right Content */}
-        <div className="z-10 animate-fade-in-up space-y-6 text-body max-w-lg">
+        <div className="z-10 animate-fade-in-up space-y-6 text-body max-w-lg text-center md:text-left mx-auto md:mx-0">
           <p className="font-semibold text-black">
             Professionally connected to backend architecture and full-stack development.
           </p>

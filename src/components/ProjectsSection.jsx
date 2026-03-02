@@ -86,7 +86,7 @@ export default function ProjectsSection() {
           <div className="main-container grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-24">
             
             {/* Left side text */}
-            <div className="z-10 order-2 lg:order-1 lg:pr-12">
+            <div className="z-10 order-2 lg:order-1 lg:pr-12 text-center lg:text-left flex flex-col items-center lg:items-start">
               <p className="text-zinc-500 uppercase tracking-widest text-xs font-bold mb-2">
                 Agentic AI & Developer Tools
               </p>
@@ -136,7 +136,7 @@ export default function ProjectsSection() {
             </div>
 
             {/* Right side text */}
-            <div className="z-10">
+            <div className="z-10 text-center lg:text-left flex flex-col items-center lg:items-start">
               <p className="text-zinc-500 uppercase tracking-widest text-xs font-bold mb-2">
                 Enterprise Workforce Management
               </p>
