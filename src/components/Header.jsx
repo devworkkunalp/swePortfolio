@@ -12,11 +12,11 @@ export default function Header() {
       </div>
 
       {/* Top Right Buttons */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 sm:gap-4">
         <a 
           href="./Dev-KunalPatil-4years.pdf" 
           download="Kunal_Patil_Resume.pdf"
-          className="btn-bubbly !px-6 !py-2 !text-sm"
+          className="btn-bubbly !px-3 !py-1.5 sm:!px-6 sm:!py-2 !text-xs sm:!text-sm"
         >
           Download CV
         </a>
@@ -31,7 +31,7 @@ export default function Header() {
                 });
               }
           }}
-          className="btn-bubbly !px-6 !py-2 !text-sm"
+          className="btn-bubbly !px-3 !py-1.5 sm:!px-6 sm:!py-2 !text-xs sm:!text-sm"
         >
           Contact
         </button>
