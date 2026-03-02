@@ -43,7 +43,7 @@ export default function ProjectsSection() {
 
   return (
     <section 
-      className="scroll-section p-0 m-0 !overflow-y-auto lg:!overflow-hidden" 
+      className="scroll-section p-0 m-0 !overflow-y-auto lg:!overflow-hidden !items-start lg:!items-center !pt-24 lg:!pt-0" 
       id="projects" 
       style={{ position: 'relative' }}
       onWheel={handleWheel}
@@ -56,7 +56,7 @@ export default function ProjectsSection() {
       <div 
         ref={scrollRef}
         onScroll={handleScroll}
-        className="flex flex-col lg:flex-row w-full h-full lg:overflow-x-auto lg:snap-x lg:snap-mandatory"
+        className="flex flex-col lg:flex-row w-full h-full lg:overflow-x-auto lg:snap-x lg:snap-mandatory gap-16 lg:gap-0 pb-16 lg:pb-0"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         <style>{`
@@ -66,7 +66,7 @@ export default function ProjectsSection() {
         `}</style>
         
         {/* Slide 1: Intro */}
-        <div className="w-full lg:min-w-[100vw] min-h-[100vh] lg:h-full lg:snap-start flex items-center justify-center relative flex-shrink-0 py-20 lg:py-0">
+        <div className="w-full lg:min-w-[100vw] h-auto lg:h-full lg:snap-start flex items-center justify-center relative flex-shrink-0 py-4 lg:py-0">
           <div className="main-container text-center relative z-10 w-full px-4 md:px-0">
             <h2 className="heading-xl mb-6 tracking-tight">
               Portfolio & Previous<br />Projects
@@ -83,8 +83,8 @@ export default function ProjectsSection() {
         </div>
 
         {/* Slide 2: Crown Clothing */}
-        <div className="w-full lg:min-w-[100vw] min-h-[100vh] lg:h-full lg:snap-start flex items-center justify-center relative flex-shrink-0 py-20 lg:py-0 lg:pt-20">
-          <div className="main-container grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-24">
+        <div className="w-full lg:min-w-[100vw] h-auto lg:h-full lg:snap-start flex items-center justify-center relative flex-shrink-0 py-4 lg:py-0 lg:pt-20 bg-black/5 lg:bg-transparent rounded-2xl mx-4 lg:mx-0 p-6 lg:p-0">
+          <div className="main-container grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-24">
             
             {/* Left side text */}
             <div className="z-10 order-2 lg:order-1 lg:pr-12 text-center lg:text-left flex flex-col items-center lg:items-start w-full">
@@ -110,7 +110,7 @@ export default function ProjectsSection() {
             </div>
 
             {/* Right side image */}
-            <div className="relative w-full aspect-video flex items-center justify-center order-1 lg:order-2">
+            <div className="hidden lg:flex relative w-full aspect-video items-center justify-center order-1 lg:order-2">
               <img 
                 src="./assets/dvlpr_crown_iso.png" 
                 alt="Crown Clothing Laptop Mockup" 
@@ -123,11 +123,11 @@ export default function ProjectsSection() {
         </div>
 
         {/* Slide 3: Fit & Healthy */}
-        <div className="w-full lg:min-w-[100vw] min-h-[100vh] lg:h-full lg:snap-start flex items-center justify-center relative flex-shrink-0 py-20 lg:py-0 lg:pt-20 border-b lg:border-none border-zinc-200/20">
-          <div className="main-container grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-24">
+        <div className="w-full lg:min-w-[100vw] h-auto lg:h-full lg:snap-start flex items-center justify-center relative flex-shrink-0 py-4 lg:py-0 lg:pt-20 bg-black/5 lg:bg-transparent rounded-2xl mx-4 lg:mx-0 p-6 lg:p-0">
+          <div className="main-container grid grid-cols-1 lg:grid-cols-2 items-center gap-6 lg:gap-24">
             
             {/* Left side image */}
-            <div className="relative w-full aspect-[3/4] flex items-center justify-center lg:justify-end">
+            <div className="hidden lg:flex relative w-full aspect-[3/4] items-center justify-center lg:justify-end">
               <img 
                 src="./assets/dvlpr_fit_iso.png" 
                 alt="Fit & Healthy Mobile Mockup" 
